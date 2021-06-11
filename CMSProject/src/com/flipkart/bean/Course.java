@@ -7,52 +7,51 @@ package com.flipkart.bean;
  * @author mehul
  *
  */
+
+
 public class Course {
+	//TODO: add constructor
 	private String courseCode;
 	private String courseName;
-	private String instructorId;
-	private int seats=10;
-	
-	public Course() {}  //this is a default constructor
-	
-	public Course(String courseCode, String courseName, String instructorId, int seats)
-	{
+	private String instructor;
+	private int seats = 10;
+	private boolean isOffered;
+
+	public Course(String courseCode, String courseName, String instructor, int seats, boolean isOffered) {
 		super();
 		this.courseCode = courseCode;
 		this.courseName = courseName;
-		this.setInstructorId(instructorId);
+		this.instructor = instructor;
 		this.seats = seats;
+		this.isOffered = isOffered;
 	}
-    //all getter and setter methods as per the data members.
-	
 	public String getCourseCode() {
 		return courseCode;
 	}
-
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
-
 	public String getCourseName() {
 		return courseName;
 	}
-
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
-
-	public String getInstructorId() {
-		return instructorId;
+	public String getInstructor() {
+		return instructor;
 	}
-
-	public void setInstructorId(String instructorId) {
-		this.instructorId = instructorId;
+	public void setInstructor(String instructor) {
+		this.instructor = instructor;
 	}
-
+	public boolean isOffered() {
+		return isOffered;
+	}
+	public void setOffered(boolean isOffered) {
+		this.isOffered = isOffered;
+	}
 	public int getSeats() {
 		return seats;
 	}
-
 	public void setSeats(int seats) {
 		this.seats = seats;
 	}
