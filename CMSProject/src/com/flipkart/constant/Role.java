@@ -2,7 +2,7 @@ package com.flipkart.constant;
 
 /**
  * 
- * @author sameer
+ * @author JEDI-03
  * Enumeration class for Role Types
  *
  */
