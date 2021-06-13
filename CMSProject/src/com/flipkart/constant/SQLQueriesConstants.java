@@ -9,12 +9,12 @@ public class SQLQueriesConstants {
 	
 	//AdminDao Queries
 	public static final String DELETE_COURSE_QUERY = "delete from Course where courseCode = ?";
-	public static final String ADD_COURSE_QUERY = "insert into Course(courseCode, courseName) values (?, ?)";
+	public static final String ADD_COURSE_QUERY = "insert into Course(courseCode, courseName, seats, isOffered) values (?, ?, 10, 1)";
 	public static final String VIEW_PENDING_ADMISSION_QUERY = "select userId, name, password, role, gender, address, country, studentId from student natural join user where isApproved = 0";
 	public static final String APPROVE_STUDENT_QUERY = "update Student set isApproved = 1 where studentId = ?";
 	public static final String ADD_USER_QUERY = "insert into User(userId, name, password, role, gender, address, country) values (?, ?, ?, ?, ?, ?, ?)";
 	public static final String ADD_PROFESSOR_QUERY = "insert into Professor(userId, department, designation) values (?, ?, ?)";
-	public static final String ASSIGN_COURSE_QUERY = "update Course set professorId = ? where courseCode = ?";
+	public static final String ASSIGN_COURSE_QUERY = "update Course set professorId = (select professorId from professor where userId = ?) where courseCode = ?";
 	public static final String VIEW_COURSE_QUERY = "select courseCode, courseName, professorId from Course where professorId = ?";
 	
 	public static final String ADD_STUDENT="insert into student (userId,branchName,batch,isApproved) values (?,?,?,?)";
@@ -23,7 +23,7 @@ public class SQLQueriesConstants {
 	public static final String IS_APPROVED="select isApproved from student where studentId = ? ";
 	public static final String GET_STUDENT_ID="select studentId from student where userId = ? ";
 	public static final String UPDATE_PASSWORD="update user set password=? where userId = ? ";
-	public static final String GET_PROF_NAME = "select name from user where userId = ?";
+	public static final String GET_PROF_NAME = "select name from user where userId in (select userId from professor where professorId = ?)";
 		
 	// Student Queries
 	public static final String VIEW_REGISTERED_COURSES=" select * from course inner join registeredcourse on course.courseCode = registeredcourse.courseCode where registeredcourse.studentId = ?";
@@ -41,8 +41,8 @@ public class SQLQueriesConstants {
 	public static final String INSERT_NOTIFICATION = "insert into notification(studentId,type,referenceId) values(?,?,?);";
 	public static final String GET_NOTIFICATION = "select * from notification where referenceId = ?;";
 	public static final String ADD_GRADE="update registeredcourse set Grade=? where courseCode=? and studentId=?";
-	public static final String GET_COURSES="select * from course where professorId=?";
+	public static final String GET_COURSES="select * from course where professorId in (select professorId from professor where userId = ?)";
 	public static final String GET_REGISTRATION_STATUS=" select isRegistered from student where studentId = ? ";
 	public static final String SET_REGISTRATION_STATUS="update student set isRegistered = true  where studentId=?";
-	public static final String GET_ENROLLED_STUDENTS="select course.courseCode,course.courseName,registeredcourse.studentId from course inner join registeredcourse on course.courseCode = registeredcourse.courseCode where course.professorId = ? order by course.courseCode";
+	public static final String GET_ENROLLED_STUDENTS="select course.courseCode,course.courseName,registeredcourse.studentId from course inner join registeredcourse on course.courseCode = registeredcourse.courseCode where course.professorId in (select professorId from professor where userId = ?) order by course.courseCode";
 }

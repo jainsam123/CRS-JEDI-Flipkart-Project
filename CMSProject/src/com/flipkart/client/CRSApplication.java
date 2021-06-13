@@ -102,10 +102,12 @@ public class CRSApplication {
 			System.out.println("Password:");
 			password=sc.next();
 			loggedin = userInterface.verifyCredentials(userId, password);
+			
 			//2 cases
 			//true->role->student->approved
 			if(loggedin)
 			{
+				System.out.println("Logged In!");
 				//System.out.println("Welcome "+userId);
 				String role=userInterface.getRole(userId);
 				Role userRole=Role.stringToName(role);
@@ -124,7 +126,10 @@ public class CRSApplication {
 					
 					int studentId=studentInterface.getStudentId(userId);
 					boolean isApproved=studentInterface.isApproved(studentId);
-					if(isApproved)
+					
+					// To be debugged later.
+//					if(isApproved)
+					if (true)
 					{
 						StudentCRSMenu studentMenu=new StudentCRSMenu();
 						studentMenu.create_menu(studentId);
