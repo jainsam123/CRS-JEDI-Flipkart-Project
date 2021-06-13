@@ -128,8 +128,7 @@ public class CRSApplication {
 					boolean isApproved=studentInterface.isApproved(studentId);
 					
 					// To be debugged later.
-//					if(isApproved)
-					if (true)
+					if(isApproved)
 					{
 						StudentCRSMenu studentMenu=new StudentCRSMenu();
 						studentMenu.create_menu(studentId);

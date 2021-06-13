@@ -327,7 +327,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
 			
 			String sql = SQLQueriesConstants.VIEW_COURSE_QUERY;
 			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setInt(1, catalogId);
+//			statement.setInt(1, catalogId);
 			ResultSet resultSet = statement.executeQuery();
 			
 			while(resultSet.next()) {
@@ -338,7 +338,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
 				courseList.add(course);
 			}
 			
-			System.out.println(courseList.size() + " courses in catalogId: " + catalogId);
+			System.out.println(courseList.size() + " courses in catalog ");
 			
 			return courseList;
 			

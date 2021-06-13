@@ -144,8 +144,7 @@ public class StudentDaoOperation implements StudentDaoInterface {
 			ResultSet rs = statement.executeQuery();
 			
 			// To be debugged later.
-//			if(rs.next())
-			if(true)
+			if(rs.next())
 			{
 				return rs.getBoolean("isApproved");
 			}
