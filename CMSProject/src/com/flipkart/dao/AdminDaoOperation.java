@@ -24,7 +24,7 @@ import com.flipkart.exception.UserNotAddedException;
 import com.flipkart.utils.DBUtils;
 
 /**
- * @author JDI-03
+ * @author sameer
  * Dao Class Operations for Admin
  * 
  */
