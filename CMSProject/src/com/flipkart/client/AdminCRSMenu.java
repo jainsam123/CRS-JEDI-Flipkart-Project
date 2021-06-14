@@ -188,7 +188,7 @@ public class AdminCRSMenu {
 			return;
 		}
 		
-		System.out.println("Enter Student's User ID:");
+		System.out.println("Enter Student's Student ID:");
 		int studentUserIdApproval = scanner.nextInt();
 		
 		try {
@@ -246,7 +246,7 @@ public class AdminCRSMenu {
 			System.out.println("No course in the catalogue!");
 			return courseList;
 		}
-		System.out.println(String.format("%20s | %20s | %20s","COURSE CODE", "COURSE NAME", "INSTRUCTOR"));
+		System.out.println(String.format("%20s | %20s | %20s","COURSE CODE", "COURSE NAME", "INSTRUCTOR ID"));
 		for(Course course : courseList) {
 			System.out.println(String.format("%20s | %20s | %20s", course.getCourseCode(), course.getCourseName(), course.getInstructorId()));
 		}

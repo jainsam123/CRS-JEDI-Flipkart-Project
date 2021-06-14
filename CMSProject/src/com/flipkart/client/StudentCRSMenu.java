@@ -54,8 +54,7 @@ public class StudentCRSMenu {
 			System.out.println("4. View Course");
 			System.out.println("5. View Registered Courses");
 			System.out.println("6. View grade card");
-			System.out.println("7. Make Payment");
-			System.out.println("8. Logout");
+			System.out.println("7. Logout");
 			System.out.println("*****************************");
 
 			int choice = sc.nextInt();
@@ -86,11 +85,7 @@ public class StudentCRSMenu {
 						viewGradeCard(studentId);
 						break;
 						
-				case 7:
-						make_payment(studentId);
-						break;
-						
-				case 8: 
+				case 7: 
 						CRSApplication.loggedin = false;
 						return;
 						

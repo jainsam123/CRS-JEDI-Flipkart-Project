@@ -82,7 +82,6 @@ public class ProfessorCRSMenu {
 	public void viewEnrolledStudents(String profId)
 	{
 		List<Course> coursesEnrolled=professorInterface.getCourses(profId);
-		System.out.println(String.format("%20s %20s %20s","COURSE CODE","COURSE CODE","Students  enrolled" ));
 		try
 		{
 			List<EnrolledStudent> enrolledStudents=new ArrayList<EnrolledStudent>();
@@ -109,7 +108,7 @@ public class ProfessorCRSMenu {
 		try
 		{
 			List<Course> coursesEnrolled=professorInterface.getCourses(profId);
-			System.out.println(String.format("%20s %20s %20s","COURSE CODE","COURSE NAME","No. of Students  enrolled" ));
+			System.out.println(String.format("%20s %20s %20s","COURSE CODE","COURSE NAME","NO. ENROLLED" ));
 			for(Course obj: coursesEnrolled)
 			{
 				System.out.println(String.format("%20s %20s %20s",obj.getCourseCode(), obj.getCourseName(),10- obj.getSeats()));
