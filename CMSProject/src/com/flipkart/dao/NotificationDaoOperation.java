@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
-// import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;
 
 import com.flipkart.constant.ModeOfPayment;
 import com.flipkart.constant.NotificationType;
