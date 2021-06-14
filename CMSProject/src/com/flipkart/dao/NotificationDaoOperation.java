@@ -16,7 +16,7 @@ import com.flipkart.utils.DBUtils;
 
 /**
  * 
- * @author JEDI-03
+ * @author sameer
  * Class to implement Notification Dao Operations
  * Used for adding the notification to the database
  *
